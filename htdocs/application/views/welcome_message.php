@@ -81,6 +81,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>Welcome to CodeIgniter!</h1>
 
+	<a href="<?php echo base_url();?>welcome/home">Home</a><br>
+	<a href="<?php echo base_url();?>welcome/about">About</a>
+
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
 
