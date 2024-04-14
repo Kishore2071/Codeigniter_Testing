@@ -1,9 +1,4 @@
-<?= $this->extend("layouts/default") ?>
+<?= $this->extend('layouts/default') ?>
 
-<?= $this->section("title") ?>Home<?= $this->endSection() ?>
-
-<?= $this->section("content") ?>
-
-    <h1>Welcome</h1>
-
-<?= $this->endSection() ?>
+<?= $this->section('title'); ?>Home<?= $this->endSection(); ?>
+<?= $this->section('content'); ?><h1>Home Page Loaded</h1><?= $this->endSection(); ?>

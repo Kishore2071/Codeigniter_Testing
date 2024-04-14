@@ -6,8 +6,8 @@ use CodeIgniter\Config\BaseConfig;
 
 class Email extends BaseConfig
 {
-    public string $fromEmail  = 'noreply@example.com';
-    public string $fromName   = 'CI App';
+    public string $fromEmail  = '';
+    public string $fromName   = '';
     public string $recipients = '';
 
     /**
@@ -18,7 +18,7 @@ class Email extends BaseConfig
     /**
      * The mail sending protocol: mail, sendmail, smtp
      */
-    public string $protocol = 'smtp';
+    public string $protocol = 'mail';
 
     /**
      * The server path to Sendmail.
@@ -26,7 +26,7 @@ class Email extends BaseConfig
     public string $mailPath = '/usr/sbin/sendmail';
 
     /**
-     * SMTP Server Address
+     * SMTP Server Hostname
      */
     public string $SMTPHost = '';
 
@@ -56,7 +56,11 @@ class Email extends BaseConfig
     public bool $SMTPKeepAlive = false;
 
     /**
-     * SMTP Encryption. Either tls or ssl
+     * SMTP Encryption.
+     *
+     * @var string '', 'tls' or 'ssl'. 'tls' will issue a STARTTLS command
+     *             to the server. 'ssl' means implicit SSL. Connection on port
+     *             465 should set this to ''.
      */
     public string $SMTPCrypto = 'tls';
 
@@ -73,7 +77,7 @@ class Email extends BaseConfig
     /**
      * Type of mail, either 'text' or 'html'
      */
-    public string $mailType = 'html';
+    public string $mailType = 'text';
 
     /**
      * Character set (utf-8, iso-8859-1, etc.)

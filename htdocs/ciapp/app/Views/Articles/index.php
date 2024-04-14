@@ -1,23 +1,12 @@
-<?= $this->extend("layouts/default") ?>
+<?= $this->extend('layouts/default')  ?>
 
-<?= $this->section("title") ?>Articles<?= $this->endSection() ?>
-
-<?= $this->section("content") ?>
-
-    <h1>Articles</h1>
-
-    <a href="<?= url_to("Articles::new") ?>">New</a>
-
+<?= $this->section('title') ?>Articles<?= $this->endSection() ?>
+<?= $this->section('content') ?>
+    <h1>Article Page Loaded</h1>
     <?php foreach ($articles as $article): ?>
-
         <article>
-            <h2><a href="<?= site_url('/articles/' . $article->id) ?>"><?= esc($article->title) ?></a></h2>
-            <em>By <?= esc($article->first_name) ?></em>
-            <p><?= esc($article->content) ?></p>
+            <h2><?= $article["title"] ?></h2>
+            <p><?= $article["content"] ?></p>
         </article>
-
     <?php endforeach; ?>
-
-    <?= $pager->simpleLinks() ?>
-
 <?= $this->endSection() ?>
