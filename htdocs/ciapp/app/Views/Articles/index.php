@@ -5,7 +5,7 @@
     <h1>Article Page Loaded</h1>
     <?php foreach ($articles as $article): ?>
         <article>
-            <h2><?= $article["title"] ?></h2>
+            <h2><a href="/articles/<?= $article["id"] ?>"><?= $article["title"] ?></a></h2>
             <p><?= $article["content"] ?></p>
         </article>
     <?php endforeach; ?>

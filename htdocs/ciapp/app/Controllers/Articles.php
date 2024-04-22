@@ -9,15 +9,6 @@ class Articles extends BaseController
     public function index(): string
     {
 
-        // $db = db_connect();
-
-        // $db->listTables();
-
-        // $data = [
-        //     ["title" => "One","content" => "The First"],
-        //     ["title" => "Two","content" => "Some Content"]
-        // ];
-
         $model = new ArticleModel();
 
         $data = $model->findAll();
@@ -25,4 +16,24 @@ class Articles extends BaseController
         return view("Articles/index.php", ["articles" => $data]);
 
     }
+
+    public function show($id)
+    {
+        $model = new ArticleModel();
+        $article = $model->find($id);
+        // dd($article);
+        return view("Articles/show.php", ["article" => $article]);
+
+    }
+
+    public function new()
+    {
+        return view("Articles/new");
+    }
+
+    public function create()
+    {
+            
+    }
+
 }
